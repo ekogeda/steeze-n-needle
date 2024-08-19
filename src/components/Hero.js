@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import banner from '../assets/banner.svg';
 import moveRight from '../assets/move-right.svg';
 import moveLeft from '../assets/move-left.svg';
 
 const Hero = () => {
 	const [currentSlide, setCurrentSlide] = useState(0);
+	const [isPaused, setIsPaused] = useState(false);
 
 	const slides = [
 		{
@@ -33,16 +34,29 @@ const Hero = () => {
 		},
 	];
 
-	const nextSlide = () => {
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	const nextSlide = useCallback(() => {
 		setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-	};
+	});
 
 	const prevSlide = () => {
 		setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
 	};
 
+	useEffect(() => {
+		if (!isPaused) {
+			const slideInterval = setInterval(nextSlide, 3000);
+			// Cleanup interval on component unmount
+			return () => clearInterval(slideInterval);
+		}
+	}, [isPaused, nextSlide]);
+
 	return (
-		<div className='relative h-[250px] lg:h-[376px]'>
+		<div
+			onMouseEnter={() => setIsPaused(true)}
+			onMouseLeave={() => setIsPaused(false)}
+			className='relative h-[250px] lg:h-[376px]'
+		>
 			<div className='overflow-hidden rounded-2xl'>
 				<div
 					className='flex transition-transform duration-700'
