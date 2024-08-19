@@ -49,9 +49,9 @@ body {
 }
 
 @media (max-width: 1024px) {
-	.slick-track {
+	/* .slick-track {
 		width: 4420px !important;
-	}
+	} */
 
 	.slick-arrow {
 		display: none !important;
