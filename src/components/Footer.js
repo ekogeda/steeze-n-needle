@@ -12,7 +12,7 @@ const Footer = () => {
 				<div>
 					<div className='space-y-10'>
 						<div className='flex items-center justify-between'>
-							<Link to='/'>
+							<Link to='/' onClick={() => window.scrollTo(0, 0)}>
 								<img src={logo} alt='steeze and needle logo' className='w-2/4 lg:w-[188px] h-auto lg:h-[43px]' />
 							</Link>
 							<div className='flex items-center gap-2'>
@@ -38,13 +38,13 @@ const Footer = () => {
 				{/* Navigation Section */}
 				<div>
 					<div className='flex items-center justify-center space-x-10'>
-						<Link to='/' className='text-sm lg:text-base font-bold'>
+						<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
 							Home
 						</Link>
-						<Link to='/fabrics' className='text-sm lg:text-base font-bold'>
+						<Link to='/fabrics' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
 							Products
 						</Link>
-						<Link to='/' className='text-sm lg:text-base font-bold'>
+						<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
 							Contact
 						</Link>
 					</div>
@@ -52,16 +52,16 @@ const Footer = () => {
 						<div>
 							<p className='text-base lg:text-xl font-bold mb-2 lg:mb-4'>Home</p>
 							<div className='flex flex-col space-y-4'>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Features
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Popular Products
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Testimonials
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									FAQ
 								</Link>
 							</div>
@@ -69,16 +69,16 @@ const Footer = () => {
 						<div>
 							<p className='text-base lg:text-xl font-bold mb-2 lg:mb-4'>Menswear</p>
 							<div className='flex flex-col space-y-4'>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Casual
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Formal
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Party
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Business
 								</Link>
 							</div>
@@ -86,16 +86,16 @@ const Footer = () => {
 						<div>
 							<p className='text-base lg:text-xl font-bold mb-2 lg:mb-4'>Womenwear</p>
 							<div className='flex flex-col space-y-4'>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Casual
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Formal
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Party
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Business
 								</Link>
 							</div>
@@ -103,13 +103,13 @@ const Footer = () => {
 						<div>
 							<p className='text-base lg:text-xl font-bold mb-2 lg:mb-4'>Kidswear</p>
 							<div className='flex flex-col space-y-4'>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Casual
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Formal
 								</Link>
-								<Link to='/' className='text-sm lg:text-lg hover:underline'>
+								<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-lg hover:underline'>
 									Party
 								</Link>
 							</div>
