@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/steeze-and-needle-logo.png';
 import FB from '../assets/fb.svg';
@@ -5,6 +6,20 @@ import TW from '../assets/tw.svg';
 import LN from '../assets/ln.svg';
 
 const Footer = () => {
+	const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsSmallScreen(window.innerWidth < 768);
+		};
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
 	return (
 		<footer className='bg-white mt-10'>
 			<div className='py-[30px] lg:py-[80px] px-5 xl:px-[162px] grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -15,11 +30,13 @@ const Footer = () => {
 							<Link to='/' onClick={() => window.scrollTo(0, 0)}>
 								<img src={logo} alt='steeze and needle logo' className='w-2/4 lg:w-[188px] h-auto lg:h-[43px]' />
 							</Link>
-							<div className='flex items-center gap-2'>
-								<img src={FB} className='w-[25px] cursor-pointer' alt='icons' />
-								<img src={TW} className='w-[25px] cursor-pointer' alt='icons' />
-								<img src={LN} className='w-[25px] cursor-pointer' alt='icons' />
-							</div>
+							{isSmallScreen && (
+								<div className='flex items-center gap-2'>
+									<img src={FB} className='w-[25px] cursor-pointer' alt='icons' />
+									<img src={TW} className='w-[25px] cursor-pointer' alt='icons' />
+									<img src={LN} className='w-[25px] cursor-pointer' alt='icons' />
+								</div>
+							)}
 						</div>
 
 						<div className='lg:w-[480px] flex items-center gap-4'>
@@ -37,18 +54,21 @@ const Footer = () => {
 
 				{/* Navigation Section */}
 				<div>
-					<div className='flex items-center justify-center space-x-10'>
-						<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
-							Home
-						</Link>
-						<Link to='/fabrics' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
-							Products
-						</Link>
-						<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
-							Contact
-						</Link>
-					</div>
-					<div className='hidden lg:grid grid-cols-2 md:grid-cols-4 gap-4'>
+					{isSmallScreen && (
+						<div className='flex items-center justify-center space-x-10'>
+							<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
+								Home
+							</Link>
+							<Link to='/fabrics' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
+								Products
+							</Link>
+							<Link to='/' onClick={() => window.scrollTo(0, 0)} className='text-sm lg:text-base font-bold'>
+								Contact
+							</Link>
+						</div>
+					)}
+
+					<div className='hidden md:grid grid-cols-2 md:grid-cols-4 gap-4'>
 						<div>
 							<p className='text-base lg:text-xl font-bold mb-2 lg:mb-4'>Home</p>
 							<div className='flex flex-col space-y-4'>
@@ -124,11 +144,13 @@ const Footer = () => {
 					<p className='order-2 md:order-1'>Terms & Conditions</p>
 					<p className='order-1 md:order-2'>Privacy Policy</p>
 				</div>
-				<div className='flex items-center gap-2'>
-					<img src={FB} className='w-[30px] cursor-pointer' alt='icons' />
-					<img src={TW} className='w-[30px] cursor-pointer' alt='icons' />
-					<img src={LN} className='w-[30px] cursor-pointer' alt='icons' />
-				</div>
+				{!isSmallScreen && (
+					<div className='flex items-center gap-2'>
+						<img src={FB} className='w-[30px] cursor-pointer' alt='icons' />
+						<img src={TW} className='w-[30px] cursor-pointer' alt='icons' />
+						<img src={LN} className='w-[30px] cursor-pointer' alt='icons' />
+					</div>
+				)}
 				<p>© {new Date().getFullYear()} Steeze and Needle. All rights reserved.</p>
 			</div>
 		</footer>
