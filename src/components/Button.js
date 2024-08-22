@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = ({ children, onClick, variant = 'default', size = 'md', disabled = false, rounded = false }) => {
-	const baseStyle = `font-normal text-white focus:outline-none focus:ring-2 focus:ring-offset-2`;
+	const baseStyle = `font-normal focus:outline-none focus:ring-2 focus:ring-offset-2`;
 
 	const sizeClasses = {
 		sm: 'px-3 py-1 text-sm',
@@ -10,9 +10,11 @@ const Button = ({ children, onClick, variant = 'default', size = 'md', disabled 
 	};
 
 	const variantClasses = {
-		default: 'bg-primary hover:bg-primary-dark',
-		light: 'bg-primary-light hover:bg-primary',
-		dark: 'bg-primary-dark hover:bg-primary',
+		default: 'bg-primary text-white hover:bg-primary-dark text-primary border border-primary',
+		light: 'bg-primary-light text-white hover:bg-primary text-primary-light border border-primary-light',
+		dark: 'bg-primary-dark text-white hover:bg-primary text-primary-dark border border-primary-dark',
+		'v-dark': 'bg-[#262626] text-white hover:bg-[#282828] border border-[#262626]',
+		outline: 'bg-none text-[#262626] border border-gray-200 text-gray-900 hover:bg-gray-200',
 	};
 
 	const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg';

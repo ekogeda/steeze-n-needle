@@ -46,7 +46,7 @@ function HomePage() {
 				<section className='trending'>
 					<div className='flex flex-col md:flex-row lg:flex-row items-center justify-between space-y-4 lg:space-y-0'>
 						<div className='w-full md:w-2/3'>
-							<h3 className='text-[#1A1A1A] text-2xl lg:text-5xl font-semibold leading-10 lg:leading-[62.54px]'>
+							<h3 className='text-[#1A1A1A] text-2xl lg:text-4xl font-semibold leading-10 lg:leading-[62.54px]'>
 								Trending..
 							</h3>
 							<p className='text-[#656567] text-sm lg:text-base lg:leading-6'>
@@ -74,7 +74,7 @@ function HomePage() {
 					<div className=''>
 						<p className='text-sm text-[#98989A] text-[18px] uppercase'>About us</p>
 						<div className='w-full md:w-2/3'>
-							<h3 className='text-[#1A1A1A] text-2xl lg:text-5xl font-semibold leading-10 lg:leading-[62.54px]'>
+							<h3 className='text-[#1A1A1A] text-2xl lg:text-4xl font-semibold leading-10 lg:leading-[62.54px]'>
 								Our Experience.
 							</h3>
 							<p className='text-[#656567] text-sm lg:text-base lg:leading-6'>
@@ -129,7 +129,7 @@ function HomePage() {
 					<div className='flex flex-col md:flex-row lg:flex-row items-center justify-between space-y-4 lg:space-y-0'>
 						<div className='w-full md:w-2/3'>
 							<p className='text-sm text-[#98989A] text-[18px] uppercase'>Testimonials</p>
-							<h3 className='text-[#1A1A1A] text-2xl lg:text-5xl font-semibold leading-10 lg:leading-[62.54px]'>
+							<h3 className='text-[#1A1A1A] text-2xl lg:text-4xl font-semibold leading-10 lg:leading-[62.54px]'>
 								Customers Love.
 							</h3>
 							<p className='text-[#656567] text-sm lg:text-base lg:leading-6'>

@@ -4,6 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				'custom-gray': '#262626',
 				primary: {
 					light: '#338c66', // A lighter shade of the primary color
 					DEFAULT: '#006633', // The default primary color
@@ -12,6 +13,14 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addBase, theme }) {
+			addBase({
+				body: {
+					color: theme('colors.custom-gray'),
+				},
+			});
+		},
+	],
 };
 

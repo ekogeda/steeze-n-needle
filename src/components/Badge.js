@@ -1,7 +1,5 @@
-import React from 'react';
-
-const Badge = ({ children, variant = 'default', size = 'md', rounded = false }) => {
-	const baseStyle = `inline-flex items-center justify-center font-semibold text-white`;
+const Badge = ({ children, variant = 'default', size = 'md', rounded = false, color }) => {
+	const baseStyle = `inline-flex items-center justify-center font-semibold`;
 
 	const sizeClasses = {
 		sm: 'px-2 py-1 text-xs',
@@ -15,9 +13,12 @@ const Badge = ({ children, variant = 'default', size = 'md', rounded = false }) 
 		dark: 'bg-primary-dark',
 	};
 
+	// Use the custom color if provided, otherwise fall back to the variant
+	const colorClass = color ? color : variantClasses[variant];
+
 	const roundedClasses = rounded ? 'rounded-full' : 'rounded-md';
 
-	const combinedClasses = `${baseStyle} ${sizeClasses[size]} ${variantClasses[variant]} ${roundedClasses}`;
+	const combinedClasses = `${baseStyle} ${sizeClasses[size]} ${colorClass} ${roundedClasses}`;
 
 	return <span className={combinedClasses}>{children}</span>;
 };
